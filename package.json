@@ -1,0 +1,37 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --p tsconfig.build.json",
+    "dev": "npm run docker",
+    "docker": "docker compose up --build --remove-orphans",
+    "lint:fix": "eslint ./src --fix",
+    "watch": "nodemon src/index.js"
+},
+"nodemonConfig": {
+    "exec": "node --loader ts-node/esm --trace-warnings --inspect=0.0.0.0:9229 /node/app/src/server.ts",
+    "ext": "ts",
+    "ignore": [
+        "node_modules",
+        ".git"
+    ],
+    "legacyWatch": true,
+    "watch": [
+        "src"
+    ]
+},
+  "keywords": [],
+  "author": "1muen",
+  "dependencies": {
+    "mongoose": "8.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.0",
+    "nodemon":"3.1.4",
+    "ts-node": "10.9.2",
+    "typescript": "5.5.4"
+  }
+}

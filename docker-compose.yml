@@ -1,0 +1,25 @@
+version: "2.4"
+
+services:
+  test-service:
+    dns:
+      - 1.1.1.1
+      - 8.8.4.4
+    build:
+      context: .
+    ports:
+      - "4002:3000"
+      # - "9202:9229"
+    volumes:
+      - .:/node/app
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin

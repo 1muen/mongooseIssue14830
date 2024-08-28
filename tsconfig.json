@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "module": "ESNext",
+        "target": "ES2022",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleDetection": "auto",
+        "sourceMap": true,
+        "strict": true,
+        "strictNullChecks": false,
+        "outDir": "./dist/",
+        "jsx": "react",
+        "skipLibCheck": true,
+        "resolveJsonModule": true
+    },
+    "include": ["./src/"],
+    "ts-node": {
+        "esm": true,
+        "experimentalSpecifierResolution": "node",
+        "files": true,
+        "experimentalResolver": true,
+        "typeCheck": true
+    },
+}
